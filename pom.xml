@@ -19,6 +19,7 @@
     <log4j.version>1.2.17</log4j.version>
     <slf4j.version>1.7.21</slf4j.version>
     <junit.version>4.12</junit.version>
+    <tomee.version>7.0.4</tomee.version> <!-- 7.0.4 -->
   </properties>
   
   <dependencies>
@@ -94,6 +95,23 @@
       <version>${junit.version}</version>
     </dependency>
 
+	<!-- Dependencies for Embedded EJB Container -->
+
+	<dependency>
+		<groupId>org.apache.tomee</groupId>
+		<artifactId>tomee-embedded</artifactId>
+		<version>${tomee.version}</version>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.tomee</groupId>
+		<artifactId>tomee-jaxrs</artifactId>
+		<version>${tomee.version}</version>
+		<scope>provided</scope>
+	</dependency>
+	
+	<!-- End of Embedded EJB Container -->
+
   </dependencies>
   
   <build>
@@ -102,8 +120,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.5.1</version>
         <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
         </configuration>
       </plugin>
     </plugins>
